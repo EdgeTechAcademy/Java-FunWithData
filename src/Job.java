@@ -1,14 +1,14 @@
 import java.time.LocalDate;
 
 public class Job {
-    private int     entry;
-    private String  company;
-    private LocalDate    dateApplied;
-    private int     week;
-    private String  location;
-    private int     salary;
-    private String  position;
-    private String  title;
+    private int         entry;
+    private String      company;
+    private LocalDate   dateApplied;
+    private int         week;
+    private String      location;
+    private int         salary;
+    private String      position;
+    private String      title;
 
     public int getEntry() {
         return entry;

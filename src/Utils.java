@@ -6,6 +6,7 @@ public class Utils {
 
     /**
      * 		getInput	-	Prompt the user to type something in the console window
+     *
      * @param prompt		String - The message telling the user what to enter
      * @return				String - The users response
      */
@@ -18,6 +19,7 @@ public class Utils {
 
     /**
      * 	getDouble		-	Prompt the user to respond with a number
+     *
      * @param prompt		String - The message telling the user what to enter
      * @return				double - The users response converted to a number
      */
@@ -38,6 +40,7 @@ public class Utils {
 
     /**
      * 	getNumber		-	Prompt the user to respond with a number
+     *
      * @param prompt		String - The message telling the user what to enter
      * @return				int - The users response converted to a number
      */
@@ -59,6 +62,7 @@ public class Utils {
     /**
      *
      * 	getNumber		-	Prompt the user to respond with a number less than or equal to max
+     *
      * @param prompt		String - The message telling the user what to enter
      * @param max			int - max number the user can enter
      * @return				int - The users response converted to a number

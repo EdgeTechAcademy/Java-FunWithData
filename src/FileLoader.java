@@ -9,6 +9,8 @@ public class FileLoader {
 
         //  read the list of ship's passengers into a ListArray of text
         List<String> titanic    = FileToList("C:/projects/csv/titanic.csv");
+
+        //  read the list of jobs
         List<String> arOfJobs   = FileToList("C:/projects/csv/JobSearch.csv");
 
         //  take the List of passenger String data and convert into a List of Passengers
