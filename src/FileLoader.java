@@ -17,6 +17,30 @@ public class FileLoader {
         //  take the List of passenger String data and convert into a List of Passengers
         List<Passenger> passengers = listToPassengers(titanic);
 
+        //  TODO #1 how many jobs did I apply for in May
+        //  TODO #2 make this into a method: 1 parameter: month number and returns a number of jobs applied for
+        //  TODO #3 how many jobs did I apply for on the 3rd of the month
+        //  TODO #4 change the method:
+        //      now it has two parameters:
+        //          a number (could be the day of the month or the number of the month)
+        //          a string ("day" or "month")
+        //      add a switch statement to your method to switch on your string.
+        //          if it is "day" you will count the jobs applied for on that day of the month, like you did in #3
+        //          if it is "month" you will count the jobs applied for in that month, like you did in #1
+        //  TODO #5 how many jobs did I apply for on a Thursday. change your method
+        //      Change the switch satement to switch on "weekday"
+
+        //  TODO #6 add a request in main to ask the user for
+        //      the kind of search to do ("day", "month", "weekday"
+        //      the number of a month or day of the week or day of the month
+        //      use those two pieces of data to call your method to get the count of jobs applied for
+
+        //  TODO #7 What day of the week did I apply for the most jobs
+        //      create an array of 7 ints
+        //      get the count of jobs applied for each day
+        //      find the largest number in the array
+        //      this is your biggest day of the week
+
         for (var j : jobs) {
             System.out.println(j.getDateApplied());
         }
