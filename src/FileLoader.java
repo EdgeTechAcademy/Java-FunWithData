@@ -4,14 +4,20 @@ import java.util.List;
 
 public class FileLoader {
     public static void main(String[] args) {
-        var titanic = FileToList("C:/projects/csv/titanic.csv");
-        var passengers = ListToPassengers(titanic);
+
+        //  read the list of ship's passengers into a ListArray of text
+        List<String> titanic = FileToList("C:/projects/csv/titanic.csv");
+
+        //  take the List of passenger String data and convert into a List of Passengers
+        List<Passenger> passengers = ListToPassengers(titanic);
+
 //        passengers.forEach(p -> System.out.println(p.getFirstName()));
         for (var p : passengers) {
+            //  find baby passengers (age 0 just means we do not have their age from the ship's records
             if (p.getAge() < 1 && p.getAge() != 0) {
                 System.out.println(p.getFirstName() + " " + p.getLastName() + " was " + p.getAge()*12 + " months old.");
             }
-        }
+        }   //  end of the for loop
 
     }       //  end of main
 
