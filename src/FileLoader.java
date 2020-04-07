@@ -25,7 +25,7 @@ public class FileLoader {
         for (var p : passengers) {
             //  find baby passengers (age 0 just means we do not have their age from the ship's records
             if (p.getAge() < 1 && p.getAge() != 0) {
-              //  System.out.println(p.getFirstName() + " " + p.getLastName() + " was " + p.getAge()*12 + " months old.");
+                System.out.println(p.getFirstName() + " " + p.getLastName() + " was " + p.getAge()*12 + " months old.");
             }
         }   //  end of the for loop
 
