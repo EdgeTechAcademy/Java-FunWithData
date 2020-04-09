@@ -19,7 +19,7 @@ public class NewFileLoader {
         //  take the List of passenger String data and convert into a List of Passengers
         List<Passenger> passengers = listToPassengers(titanic);
 
-        allTheJobCode(jobs);
+        //  allTheJobCode(jobs);
 
 //        passengers.forEach(p -> System.out.println(p.getFirstName()));
         for (var p : passengers) {
@@ -30,8 +30,16 @@ public class NewFileLoader {
             }
         }   //  end of the babies for loop
 
-        //  TODO list all survivors
+        //  TODO    #A  list all survivors (make this a method)
+        //  TODO    #B  Method to get a List by last Name
+        //  TODO    #C  Method to get a List by First Name
+        //  TODO    #D  Method to get a List by Class
+        //  TODO    #E  Method to get a List by Passenger Or Crew
+        //  TODO    #F  Method to get a List by Role
+        //  TODO    #G  Method to get a List by age
+        //  TODO    #H  Method to get a List by Survivor status. Change #A to get survivors or fatalities
 
+        
     }       //  end of main
 
     public static void allTheJobCode(List<Job> jobs) {
