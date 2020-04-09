@@ -258,7 +258,7 @@ public class NewFileLoader {
             String[] names = properties[0].split("/");
 
             //                           ﻿Last Name/ First Name,Age,  Class,      Passenger or Crew,    Role,      Survivor
-            Passenger pax = new Passenger(names[0], names[1], age, properties[2], properties[3], properties[4], properties[5].equals("1"));
+            Passenger pax = new Passenger(names[0], names[1], age, properties[2], properties[3], properties[4], properties[5].equals("T"));
             //  add the passenger to the output variable
             passengers.add(pax);
         }                   //  end of the enhanced (for each) loop
