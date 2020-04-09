@@ -39,7 +39,7 @@ public class NewFileLoader {
         //  TODO    #G  Method to get a List by age
         //  TODO    #H  Method to get a List by Survivor status. Change #A to get survivors or fatalities
 
-        
+
     }       //  end of main
 
     public static void allTheJobCode(List<Job> jobs) {
