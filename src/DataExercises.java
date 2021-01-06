@@ -188,16 +188,21 @@ public class DataExercises {
         //  now just for some simple array functions with a simple array of numbers
         int[]     ages  =           {14, 17, 11, 32, 33, 16, 40, 15, 4, 18, 912, 543, 33};
 
+        //  in order to do some of the things we did in JavaScript we have to convert our int array into a List
+        List<Integer> list = IntStream.of(ages)         //  create a stream
+                .boxed()                                //  box ints into Integers
+                .collect(Collectors.toList());          //  Collect the results into a List
+
         System.out.format ("reduce -    %d%n", Arrays.stream(ages).reduce(0, (tot, num) -> tot - num)); //  subtract the numbers from 0
-        System.out.format ("reduce +    %d%n", Arrays.stream(ages).reduce(0, (tot, num) -> tot + num)); //  add numbers together starting at 0
+        System.out.format ("reduce +    %d%n", Arrays.stream(ages).sum());                              //  add numbers together starting at 0
         System.out.format ("every       %b%n", Arrays.stream(ages).allMatch(age -> age >= 18));         //  is every number >= to 18
         System.out.format ("includes    %b%n", Arrays.stream(ages).anyMatch(age -> age >= 18));         //  does the array include any numbers >= 18?
         System.out.format ("none        %b%n", Arrays.stream(ages).noneMatch(age -> age >= 18));        //  are none of the numbers >= 18
-        System.out.format ("find        %d%n", Arrays.stream(ages).filter(age -> age >= 18).findFirst()); //  find the first 18 in the array
-        System.out.format ("includes    %d%n", Arrays.asList(ages).contains(16));                       //  look for 16 starting at the front [0] of the array
-        System.out.format ("some        %d%n", Arrays.stream(ages).anyMatch(age -> age >= 18));         //  are some of the numbers >= 18
-        System.out.format ("indexOf     %d%n", Arrays.asList(ages).indexOf(33));                        //  where is the first 33
-        System.out.format ("lastIndexOf %d%n", Arrays.asList(ages).lastIndexOf(33));                    //  where is the last 33
+        System.out.format ("find        %s%n", Arrays.stream(ages).filter(age -> age >= 18).findFirst().getAsInt()); //  find the first 18 in the array
+        System.out.format ("includes    %b%n", list.contains(16));                                      //  look for 16 starting at the front [0] of the array
+        System.out.format ("some        %b%n", Arrays.stream(ages).anyMatch(age -> age >= 18));         //  are some of the numbers >= 18
+        System.out.format ("indexOf     %d%n", list.indexOf(33));                                       //  where is the first 33
+        System.out.format ("lastIndexOf %d%n", list.lastIndexOf(33));                                   //  where is the last 33
         System.out.format ("filter      %d%n", Arrays.stream(ages).filter(age -> age >= 100).count());  //  get array of numbers > 100
     }       //  end of main
 }               //  end of the class
