@@ -85,7 +85,7 @@ public class Passenger {
 
             //  convert the text age into a floating point number
             if (properties[2].length() == 0) properties[2] = "0";
-            float age = DataExercises.convertToFloat(properties[2]);
+            float age = Utils.convertToFloat(properties[2]);
 
             //                           ﻿Last Name,      First Name,    Age,  Class,      Passenger or Crew,    Role,      Survivor
             Passenger pax = new Passenger(properties[0], properties[1], age, properties[3], properties[4], properties[5], properties[6].equals("true"));

@@ -1,4 +1,7 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Job {
     private int         entry;
@@ -90,4 +93,47 @@ public class Job {
         this.position = position;
         this.title = title;
     }
+
+    /**
+     *      ListToJobs
+     *          The parameter titanic is a ListArray of strings representing passengers on the titanic
+     *          This is the format of the text
+     *          ﻿Last Name/ First Name, Age, Class, Passenger or Crew, Role, Survivor
+     *          we will split the text in to the individual fields and create a Passenger object with the data
+     *
+     * @param   jobSearch     ListArray of strings. All the text from a file
+     * @return              return a list of Passengers
+     *
+     */
+    public static List<Job> listToJobs(List<String> jobSearch) {
+        //  the method returns a List of Passengers so we need a variable to hold that data
+        List<Job> jobs = new ArrayList<>();
+
+        //  the first line in the list is the header line. We want to remove it and not try convert it to a passenger
+        jobSearch.remove(0);
+
+        //  for each line of text in the ListArray
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        for (var line : jobSearch) {
+            //  take the text and split on comma to create an array of the individual elements for each passenger
+            String[] properties = line.split(",");
+
+            //  convert the text entryId, week and salary into an int
+            int entryId = Integer.parseInt(properties[0]);
+            int week = Integer.parseInt(properties[3]);
+            int salary = Integer.parseInt(properties[5]);
+
+            //  conver the date 9-Oct to a LocalDate object. Append 2020 on to the end of the string
+            LocalDate date = LocalDate.parse(properties[2] + "-2020", formatter);
+
+            //              Entry,      Company,      Date, Week,  Location,     Salary,  Position,     Title
+            Job job = new Job(entryId, properties[1], date, week, properties[4], salary, properties[6], properties[7]);
+            //  add the passenger to the output variable
+            jobs.add(job);
+        }                   //  end of the enhanced (for each) loop
+
+        //  return the ListArray of passengers back to the calling code
+        return jobs;
+    }
+
 }

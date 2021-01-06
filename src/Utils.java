@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Utils {
@@ -78,6 +84,59 @@ public class Utils {
         return number;							//	yay, we have our number
     }
 
+    /**
+     * FileToList
+     * We read the entire file into memory. Each line is saved to a String which is added to a ListArray
+     *
+     * @param from file to be read
+     * @return return a list of lines of the file read
+     */
+    public static List<String> FileToList(String from) {
+        //  list is the variable that will hold the file we are reading
+        List<String> list = new ArrayList<>();
+        String line;
+
+        //  convert the string of the file name in to a File object
+        File fin = new File(from);
+        try {
+            //  Construct BufferedReader from FileReader
+            //  The BufferedReader is designed to read line based text from a file
+            BufferedReader br = new BufferedReader(new FileReader(fin));
+
+            //  while there is data to be read
+            while ((line = br.readLine()) != null) {
+                //  add each line to the list
+                list.add(line);
+            }
+            //  close the file
+            br.close();
+        } catch (IOException e) {
+            System.out.println("File IO error on read: " + e);
+        }
+
+        //  return the list of text lines
+        return list;
+    }           //  end of FileToList
+
+    public static int convertToInt(String num) {
+        int number;
+        try {								//	protect the code from dieing if we don"t get a number from the user
+            number = Integer.parseInt(num);	//	convert to a number
+        } catch (NumberFormatException e) {			//	bad news. We did not get a number
+            number = 0;		//	warn the user and continue prompting
+        }
+        return number;
+    }
+
+    public static float convertToFloat(String num) {
+        float number;
+        try {								//	protect the code from dieing if we don"t get a number from the user
+            number = Float.parseFloat(num);	//	convert to a number
+        } catch (NumberFormatException e) {			//	bad news. We did not get a number
+            number = 0;		//	warn the user and continue prompting
+        }
+        return number;
+    }
     public static void main(String[] args) {
         int max, number;
         do {
